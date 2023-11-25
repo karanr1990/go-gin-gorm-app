@@ -12,6 +12,10 @@ func init() {
 func main() {
 	router := gin.Default()
 	router.POST("/posts", controllers.PostsCreate)
+	router.GET("/posts", controllers.PostsFindAll)
+	router.GET("/posts/:id", controllers.PostFindOne)
+	router.PATCH("/posts/:id", controllers.PostUpdate)
+	router.DELETE("/posts/:id", controllers.PostDelete)
 
 	router.Run()
 
